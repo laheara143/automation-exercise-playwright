@@ -23,5 +23,11 @@ export class LoginPage {
         await expect (this.page.locator('text=Your email or password is incorrect!')).toBeVisible();
     }
 
-
-}
+  
+    async selectTitle(title : 'Mr' | 'Mrs'){
+        if (title === 'Mr'){
+            await this.page.check('#id_gender1');
+        } else {
+            await this.page.check('#id_gender2');
+        }
+    }}
