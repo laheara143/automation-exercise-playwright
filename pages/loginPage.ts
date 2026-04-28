@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+  import { Page, expect } from '@playwright/test';
 
 export class LoginPage {
     constructor(private page: Page) {}
@@ -51,7 +51,7 @@ export class LoginPage {
     async fillPersonalInfo(user: {
         fName : string; 
         lName : string; 
-        mNumber : string;
+        mNumber : number;
     }){
         await this.page.fill('[data-qa="first_name"]' , user.fName);
         await this.page.fill('[data-qa="last_name"]' , user.lName);
@@ -64,7 +64,7 @@ export class LoginPage {
         country : string
         state : string; 
         city : string;
-        zipCode : string; 
+        zipCode : number; 
     }){
         await this.page.fill('[data-qa="company"]' , user.company);
         await this.page.fill('[data-qa="address"]' , user.address);
