@@ -74,6 +74,8 @@ export class LoginPage {
         await this.page.fill('[data-qa="zipcode"]' , user.zipCode);
     }
     
- 
+    async createAccountBtn(){
+        await this.page.click('[data-qa="create-account"]');
+    } 
     
     }

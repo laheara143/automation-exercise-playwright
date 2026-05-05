@@ -49,8 +49,15 @@ test('User can succesfully sign up and create an account', async ({ page }) => {
   zipCode : '12345' 
 });
 
+  await loginPage.createAccountBtn();
+
+  await page.screenshot ({ path: 'using-to-debug.png' });
 
   //Verify Success Message
+  await expect(page).toHaveURL(/account_created/);
+  await expect (page.locator('[data-qa="account-created"]')).toHaveText('Account Created!');
+  await page.screenshot ({ path: 'veirfy-success-message.png' });
+
 
 });
 
