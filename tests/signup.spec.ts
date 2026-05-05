@@ -15,7 +15,6 @@ test('User can succesfully sign up and create an account', async ({ page }) => {
   await loginPage.signUpAccount('Test User' , email);
 
   //Fill out rest of Sign Up Form
-
   //Select Title
   await loginPage.selectTitle('Mrs');
 
