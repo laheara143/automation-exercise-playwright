@@ -55,6 +55,12 @@ test('User can succesfully sign up and create an account', async ({ page }) => {
   //Verify Success Message
   await expect(page).toHaveURL(/account_created/);
   await expect (page.locator('[data-qa="account-created"]')).toHaveText('Account Created!');
+
+  //Click Continue
+  await page.locator('[data-qa="continue-button"]').click();
+
+  //Verify Return To HomePage
+  await expect(page).toHaveURL(/automationexercise.com/);
   await page.screenshot ({ path: 'veirfy-success-message.png' });
 
 
