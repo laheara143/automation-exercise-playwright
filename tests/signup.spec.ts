@@ -5,13 +5,14 @@ import { HomePage } from '../pages/homePage';
 test('User can succesfully sign up and create an account', async ({ page }) => {
   const loginPage = new LoginPage(page);
   const homePage = new HomePage(page);
+  const email = `test${Date.now()}@mail.com`;
 
   //Navigate to Website
   await page.goto('https://automationexercise.com/');
 
   //Navigate to Sign Up Page and Enter Sign Up Info
   await homePage.clickSignUpLogin();
-  await loginPage.signUpAccount('Testing' , 'Testing1234@gmail.com');
+  await loginPage.signUpAccount('Test User' , email);
 
   //Fill out rest of Sign Up Form
 
@@ -28,11 +29,25 @@ test('User can succesfully sign up and create an account', async ({ page }) => {
   await loginPage.subscribeToNewsletter();
   await loginPage.subscribeSpecialOffers();
 
+  await page.screenshot ({ path: 'before-gender-click.png' });
+
+
   //Fill in Personal Information
-  await loginPage.fillPersonalInfo('Johnny', 'Test', 1234567890);
+  await loginPage.fillPersonalInfo({
+  fName: 'Johnny',
+  lName: 'Test',
+  mNumber: '1234567890'
+});
 
   //Fill in Address Information
-  await loginPage.fillInAddressInfo('Test Company', '123 address st', 'United States', 'CT', 'Hartford', 12345);
+  await loginPage.fillInAddressInfo({
+  company : 'Test Company', 
+  address : '123 address st', 
+  country : 'United States',
+  state : 'CT', 
+  city : 'Hartford',
+  zipCode : '12345' 
+});
 
 
   //Verify Success Message

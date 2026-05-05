@@ -51,11 +51,11 @@ export class LoginPage {
     async fillPersonalInfo(user: {
         fName : string; 
         lName : string; 
-        mNumber : number;
+        mNumber : string;
     }){
-        await this.page.fill('[data-qa="first_name"]' , user.fName);
-        await this.page.fill('[data-qa="last_name"]' , user.lName);
-        await this.page.fill('[data-qa="mobile_number"]' , user.mNumber);
+        await this.page.locator('input[name="first_name"]').fill(user.fName);
+        await this.page.fill('#last_name' , user.lName);
+        await this.page.fill('#mobile_number' , user.mNumber);
     }
 
     async fillInAddressInfo(user: {
@@ -64,7 +64,7 @@ export class LoginPage {
         country : string
         state : string; 
         city : string;
-        zipCode : number; 
+        zipCode : string; 
     }){
         await this.page.fill('[data-qa="company"]' , user.company);
         await this.page.fill('[data-qa="address"]' , user.address);
