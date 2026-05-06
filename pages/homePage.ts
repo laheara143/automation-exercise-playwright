@@ -2,17 +2,14 @@ import { Page } from '@playwright/test';
 
 export class HomePage {
     constructor(private page: Page) {}
-    
-    async goToHome(){
-        await this.page.goto('/');
+
+    async addFirstProductToCart(){
+        await this.page.locator('.product-overlay').first().hover();
+        await this.page.locator('text=Add to cart').first().click();
     }
 
-    async clickSignUpLogin(){
-        await this.page.click('a[href="/login"]');
-    }
-
-    async navigateToProducts(){
-        await this.page.click('a[href="/products"]');
+    async clickViewCart(){
+        await this.page.click('text=View Cart');
     }
 
 }
