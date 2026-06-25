@@ -12,4 +12,13 @@ export class HomePage {
         await this.page.click('text=View Cart');
     }
 
+    async clickSignUpLogin(){
+        await this.page.click('text= Signup / Login');
+
+    }
+    
+    async navigateToProducts(){
+        await this.page.click('text= Products');
+
+    }
 }
