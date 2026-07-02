@@ -12,6 +12,12 @@ test('User can succesfully add products to the cart', async ({ page }) => {
   //Navigate to Products page
   await homePage.navigateToProducts(); 
 
+  //Add First Product to Cart
+  await homePage.addFirstProductToCart();
+
+  //View Cart
+  await homePage.clickViewCart();
+  
 });
 
 
