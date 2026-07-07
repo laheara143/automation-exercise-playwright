@@ -20,4 +20,9 @@ export class HomePage {
         await this.page.click('text= Products');
 
     }
+
+        async navigateToLogout(){
+        await this.page.click('text= Logout');
+
+    }
 }
