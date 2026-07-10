@@ -5,7 +5,7 @@ import { HomePage } from '../pages/homePage';
 test('User can succesfully log in and access their account', async ({ page }) => {
   const loginPage = new LoginPage(page);
   const homePage = new HomePage(page);
-  const email = `test${Date.now()}@mail.com`;
+  const email = `JohnnyTest2002@email.com`;
 
   //Navigate to Website
   await page.goto('https://automationexercise.com/');
@@ -13,7 +13,7 @@ test('User can succesfully log in and access their account', async ({ page }) =>
   //Navigate to Log In Page and Enter Log In Info
   await homePage.clickSignUpLogin();
   await loginPage.loginAccount( email , 'Testing123');
-  await expect(page.locator('.nav.navbar-nav')).toHaveText(' Logged in as Johnny');
+  await expect(page.getByText('Logged in as Johnny')).toBeVisible();
   await page.screenshot ({ path: 'verify-user-login.png' });
 
 });

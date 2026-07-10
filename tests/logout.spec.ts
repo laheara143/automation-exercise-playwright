@@ -6,7 +6,7 @@ test("Verify User can logout", async ({page}) => {
 
   const loginPage = new LoginPage(page);
   const homePage = new HomePage(page);
-  const email = `test${Date.now()}@mail.com`;
+  const email = `JohnnyTest2002@email.com`;
 
   //Navigate to Website
   await page.goto('https://automationexercise.com/');
