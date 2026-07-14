@@ -25,4 +25,9 @@ export class HomePage {
         await this.page.click('text= Logout');
 
     }
+
+    async navigateToContactUsForm(){
+        await this.page.click('text= Contact us');
+
+    }
 }
