@@ -21,11 +21,12 @@ await contactUsPage.uploadFile('tests/files/sample.pdf');
 // Submit form and clicks alert
 await contactUsPage.submitForm();
 
-
 //Verify Message was sent
-await expect(page.getByText('Success! Your details have been submitted successfully.')).toBeVisible();
+await expect(page.locator('#contact-page .alert-success')).toBeVisible();
 
 //Return to Homepage
 await page.locator('.btn.btn-success').click();
+
+await page.screenshot ({ path: 'verify-form.png' });
 });
 

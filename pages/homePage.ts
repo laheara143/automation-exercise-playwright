@@ -30,4 +30,8 @@ export class HomePage {
         await this.page.click('text= Contact us');
 
     }
+        async navigateToTestCasePage(){
+        await this.page.click('text= Test Cases');
+
+    }
 }

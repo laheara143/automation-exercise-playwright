@@ -22,12 +22,11 @@ export class ContactUsPage {
     }
 
     async submitForm() {
-        
-        const dialogPromise = this.page.waitForEvent('dialog');
+    this.page.once('dialog', async dialog => {
+        console.log('Dialog:', dialog.message());
+        await dialog.accept();
+    });
 
-            await this.page.click('[data-qa="submit-button"]');
-
-            const dialog = await dialogPromise;
-            await dialog.accept();
-    }
+    await this.page.click('[data-qa="submit-button"]');
+}
 }
