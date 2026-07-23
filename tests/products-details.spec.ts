@@ -11,7 +11,7 @@ test('Verify User can navigate to All products page and verify Product Details',
     await productspage.navigateToProducts();
 
     //Verify User is on ALL Products Page
-    await expect(page).toHaveURL('/products/');
+    await expect(page).toHaveURL('https://automationexercise.com/products');
 
     //Verify the products list is visible
     await expect (page.locator('.features_items')).toBeVisible();
@@ -20,7 +20,7 @@ test('Verify User can navigate to All products page and verify Product Details',
     await productspage.viewProductsDetails();
 
     //Verify User is on FIRST Products detail page
-    await expect(page).toHaveURL('/product_details/1/')
+    await expect(page).toHaveURL('https://automationexercise.com/product_details/1')
 
     //Verify the details page is visible
     await productspage.verifyProductDetails('Blue Top','Category: Women > Tops', 'Rs. 500');

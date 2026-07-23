@@ -21,8 +21,12 @@ export class ProductsPage {
 
 
     async verifyProductDetails(Name : String, Category : String, Price : String){
-        await expect(this.page.locator('.newarrival')).toHaveText('' + Name);
-        await expect(this.page.locator('.newarrival')).toHaveText('' + Category);
-        await expect(this.page.locator('.newarrival')).toHaveText('' + Price);
+        const productInfo = this.page.locator('.product-information');
+
+        await expect(productInfo).toContainText(Name);
+        await expect(productInfo).toContainText(Category);
+        await expect(productInfo).toContainText(Price);
+ 
     }
+    
 }
