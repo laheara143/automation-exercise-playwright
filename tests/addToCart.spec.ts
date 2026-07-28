@@ -11,6 +11,8 @@ test('User can succesfully add products to the cart', async ({ page }) => {
   //Navigate to Website
   await page.goto('https://automationexercise.com/');
 
+  await page.screenshot ({ path: 'DebugCart.png' });
+
   //Navigate to Products page
   await homePage.navigateToProducts(); 
 

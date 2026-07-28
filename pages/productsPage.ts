@@ -28,5 +28,11 @@ export class ProductsPage {
         await expect(productInfo).toContainText(Price);
  
     }
+   
     
+        async searchProduct(Product : String){
+        await this.page.fill('.form-control.input-lg', Product);
+        await this.page.locator('.btn.btn-default.btn-lg').click();
+
+    }
 }
