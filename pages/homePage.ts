@@ -11,6 +11,9 @@ export class HomePage {
         await this.page.click('text=View Cart');
     }
 
+    async clickCart(){
+        await this.page.click('text= Cart');
+    }
     async clickSignUpLogin(){
         await this.page.click('text= Signup / Login');
 
