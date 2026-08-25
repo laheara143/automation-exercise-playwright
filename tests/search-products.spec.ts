@@ -18,7 +18,7 @@ test('Verify search bar search results in correct product', async ({page}) => {
     await productspage.searchProduct('Blue Top');
 
     //Verify searched items are visible
-    await expect(page.locator('.productinfo.text-center')).toContainText('Blue Top');
+    await expect(page.locator('.productinfo.text-center').nth(0)).toContainText('Blue Top');
 
     await page.screenshot ({ path: 'verify-product-search.png' });
 
